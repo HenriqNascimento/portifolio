@@ -3,668 +3,437 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analytics Expert | Data-Driven Solutions</title>
+    <title>Henrique | Analytics Expert</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="logo">
-                <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
-                    <path d="M5 35 L20 10 L35 35 Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                    <circle cx="20" cy="15" r="3" fill="currentColor"/>
-                    <circle cx="12" cy="28" r="2" fill="currentColor"/>
-                    <circle cx="28" cy="28" r="2" fill="currentColor"/>
-                </svg>
-                <span class="logo-text">DataAnalytics</span>
+    <!-- Cursor customizado -->
+    <div class="cursor"></div>
+    <div class="cursor-follower"></div>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-bar">
+                <div class="loading-progress"></div>
             </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#home" class="nav-link">Home</a></li>
-                <li><a href="#services" class="nav-link">Serviços</a></li>
-                <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
-                <li><a href="#tools" class="nav-link">Ferramentas</a></li>
-                <li><a href="#testimonials" class="nav-link">Depoimentos</a></li>
-                <li><a href="#contact" class="nav-link">Contato</a></li>
-            </ul>
-            <button class="cta-button">Iniciar Projeto</button>
-            <div class="hamburger" id="hamburger">
-                <span></span>
+            <div class="loading-text">Carregando experiência...</div>
+        </div>
+    </div>
+
+    <!-- Navigation minimalista -->
+    <nav class="nav" id="nav">
+        <div class="nav-wrapper">
+            <a href="#" class="nav-brand">
+                <span class="brand-letter">H</span>
+                <span class="brand-dot"></span>
+            </a>
+            <div class="nav-menu-btn" id="menuBtn">
                 <span></span>
                 <span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Menu Full Screen -->
+    <div class="menu-overlay" id="menuOverlay">
+        <div class="menu-close" id="menuClose">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="menu-content">
+            <nav class="menu-nav">
+                <a href="#home" class="menu-link" data-text="Início">Início</a>
+                <a href="#expertise" class="menu-link" data-text="Expertise">Expertise</a>
+                <a href="#cases" class="menu-link" data-text="Cases">Cases</a>
+                <a href="#stack" class="menu-link" data-text="Stack">Stack</a>
+                <a href="#contato" class="menu-link" data-text="Contato">Contato</a>
+            </nav>
+            <div class="menu-footer">
+                <div class="menu-social">
+                    <a href="#" class="social-link">LI</a>
+                    <a href="#" class="social-link">BE</a>
+                    <a href="#" class="social-link">GH</a>
+                </div>
+                <p class="menu-email">henrique@analytics.pro</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero com efeito magnético -->
     <section class="hero" id="home">
-        <div class="hero-background">
-            <div class="grid-overlay"></div>
-            <canvas id="dataVisualization"></canvas>
+        <div class="hero-bg">
+            <canvas id="heroCanvas"></canvas>
         </div>
         <div class="hero-content">
             <div class="hero-badge">
-                <span class="badge-dot"></span>
-                <span>Disponível para novos projetos</span>
+                <span class="pulse-dot"></span>
+                Disponível para projetos
             </div>
             <h1 class="hero-title">
-                Transformando
-                <span class="gradient-text">Dados</span> em
-                <span class="gradient-text">Decisões Estratégicas</span>
+                <span class="title-line">
+                    <span class="word" data-word="Dados">Dados</span>
+                </span>
+                <span class="title-line">
+                    <span class="word" data-word="que">que</span>
+                    <span class="word highlight" data-word="contam">contam</span>
+                </span>
+                <span class="title-line">
+                    <span class="word" data-word="histórias">histórias</span>
+                </span>
             </h1>
-            <p class="hero-description">
-                Especialista em Analytics com foco em ROI. Ajudo empresas a crescerem através de insights
-                acionáveis, análise de dados e otimização de campanhas digitais.
+            <p class="hero-subtitle">
+                Especialista em transformar métricas complexas em decisões
+                estratégicas que <strong>multiplicam resultados</strong>
             </p>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <div class="stat-number" data-target="150">0</div>
-                    <div class="stat-label">Projetos Concluídos</div>
+            <div class="hero-cta">
+                <a href="#contato" class="btn-magnetic">
+                    <span class="btn-text">Iniciar Projeto</span>
+                    <span class="btn-icon">→</span>
+                </a>
+                <div class="hero-stats-mini">
+                    <div class="stat-mini">
+                        <span class="stat-value">+150</span>
+                        <span class="stat-label">Projetos</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-value">+3.5M</span>
+                        <span class="stat-label">ROI gerado</span>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="95">0</div>
-                    <div class="stat-label">% Satisfação</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number" data-target="3.5">0</div>
-                    <div class="stat-label">M+ em ROI</div>
-                </div>
-            </div>
-            <div class="hero-actions">
-                <a href="#contact" class="btn-primary">Iniciar Conversa</a>
-                <a href="#portfolio" class="btn-secondary">Ver Portfolio</a>
             </div>
         </div>
-        <div class="scroll-indicator">
-            <span>Role para baixo</span>
-            <div class="scroll-arrow"></div>
+        <div class="scroll-hint">
+            <span class="scroll-text">Role para explorar</span>
+            <div class="scroll-line"></div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section class="services" id="services">
+    <!-- Expertise com cards interativos -->
+    <section class="expertise" id="expertise">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">O que eu faço</span>
-                <h2 class="section-title">Serviços Especializados</h2>
-                <p class="section-description">
-                    Soluções completas em analytics e marketing digital para impulsionar seu negócio
-                </p>
+            <div class="section-header-fluid">
+                <span class="section-number">01</span>
+                <h2 class="section-title-fluid">
+                    <span>O que eu</span>
+                    <span class="highlight-fluid">domino</span>
+                </h2>
             </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+
+            <div class="expertise-grid">
+                <div class="expertise-card card-big" data-tilt>
+                    <div class="card-number">01</div>
+                    <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none">
                             <path d="M3 3v18h18" stroke="currentColor" stroke-width="2"/>
                             <path d="M7 14l4-4 3 3 6-6" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="7" cy="14" r="2" fill="currentColor"/>
+                            <circle cx="11" cy="10" r="2" fill="currentColor"/>
+                            <circle cx="14" cy="13" r="2" fill="currentColor"/>
+                            <circle cx="20" cy="7" r="2" fill="currentColor"/>
                         </svg>
                     </div>
-                    <h3>Análise de Dados</h3>
-                    <p>Coleta, análise e interpretação de dados para gerar insights estratégicos que impulsionam o crescimento do seu negócio.</p>
-                    <ul class="service-features">
-                        <li>Google Analytics 4</li>
-                        <li>Análise de Funil</li>
-                        <li>KPIs Customizados</li>
-                        <li>Relatórios Executivos</li>
-                    </ul>
+                    <h3 class="card-title">Analytics Avançado</h3>
+                    <p class="card-desc">Implementação de tracking complexo, análise de funil e identificação de oportunidades ocultas nos dados</p>
+                    <div class="card-tags">
+                        <span>GA4</span>
+                        <span>GTM</span>
+                        <span>BigQuery</span>
+                    </div>
                 </div>
-                <div class="service-card featured">
-                    <div class="featured-badge">Mais Popular</div>
-                    <div class="service-icon">
+
+                <div class="expertise-card" data-tilt>
+                    <div class="card-number">02</div>
+                    <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none">
-                            <rect x="3" y="8" width="7" height="13" rx="1" stroke="currentColor" stroke-width="2"/>
-                            <rect x="14" y="3" width="7" height="18" rx="1" stroke="currentColor" stroke-width="2"/>
+                            <rect x="3" y="8" width="6" height="13" rx="1" stroke="currentColor" stroke-width="2"/>
+                            <rect x="15" y="3" width="6" height="18" rx="1" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>Dashboards Interativos</h3>
-                    <p>Criação de dashboards personalizados em Power BI, Looker Studio e Tableau para visualização em tempo real dos seus dados.</p>
-                    <ul class="service-features">
-                        <li>Power BI</li>
-                        <li>Looker Studio</li>
-                        <li>Tableau</li>
-                        <li>Automação de Relatórios</li>
-                    </ul>
+                    <h3 class="card-title">Dashboards</h3>
+                    <p class="card-desc">Visualizações que transformam dados complexos em insights claros</p>
+                    <div class="card-tags">
+                        <span>Power BI</span>
+                        <span>Looker</span>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
+
+                <div class="expertise-card" data-tilt>
+                    <div class="card-number">03</div>
+                    <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none">
                             <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
                             <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>Otimização de Campanhas</h3>
-                    <p>Gestão e otimização de campanhas em Google Ads, Meta Ads e outras plataformas para maximizar o ROI.</p>
-                    <ul class="service-features">
-                        <li>Google Ads</li>
-                        <li>Meta Ads</li>
-                        <li>A/B Testing</li>
-                        <li>Otimização de CPC/CPM</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 22V12M12 12L3 7M12 12l9-5" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                    <h3 class="card-title">Ads Performance</h3>
+                    <p class="card-desc">Otimização contínua para maximizar ROAS e reduzir CAC</p>
+                    <div class="card-tags">
+                        <span>Google Ads</span>
+                        <span>Meta</span>
                     </div>
-                    <h3>Consultoria Estratégica</h3>
-                    <p>Análise profunda do seu negócio para identificar oportunidades e criar estratégias baseadas em dados.</p>
-                    <ul class="service-features">
-                        <li>Análise de Mercado</li>
-                        <li>Estratégia Digital</li>
-                        <li>Auditoria de Analytics</li>
-                        <li>Plano de Ação</li>
-                    </ul>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2"/>
-                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
-                            <path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                    </div>
-                    <h3>Análise de Comportamento</h3>
-                    <p>Compreensão profunda do comportamento do usuário através de heatmaps, session recordings e análise de jornada.</p>
-                    <ul class="service-features">
-                        <li>Hotjar/Crazy Egg</li>
-                        <li>User Journey</li>
-                        <li>Conversion Rate Optimization</li>
-                        <li>UX Analytics</li>
-                    </ul>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon">
+
+                <div class="expertise-card" data-tilt>
+                    <div class="card-number">04</div>
+                    <div class="card-icon">
                         <svg viewBox="0 0 24 24" fill="none">
                             <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" stroke="currentColor" stroke-width="2"/>
                         </svg>
                     </div>
-                    <h3>Previsão & Machine Learning</h3>
-                    <p>Uso de algoritmos de machine learning para previsão de vendas, churn e identificação de padrões.</p>
-                    <ul class="service-features">
-                        <li>Predictive Analytics</li>
-                        <li>Churn Prediction</li>
-                        <li>Segmentação Avançada</li>
-                        <li>Python/R</li>
-                    </ul>
+                    <h3 class="card-title">Predictive Analytics</h3>
+                    <p class="card-desc">Machine learning para prever tendências e comportamentos</p>
+                    <div class="card-tags">
+                        <span>Python</span>
+                        <span>ML</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section class="portfolio" id="portfolio">
+    <!-- Cases com reveal effect -->
+    <section class="cases" id="cases">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Cases de Sucesso</span>
-                <h2 class="section-title">Projetos que Geraram Resultados</h2>
-                <p class="section-description">
-                    Casos reais de clientes que alcançaram resultados extraordinários
-                </p>
+            <div class="section-header-fluid">
+                <span class="section-number">02</span>
+                <h2 class="section-title-fluid">
+                    <span>Resultados</span>
+                    <span class="highlight-fluid">comprovados</span>
+                </h2>
             </div>
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">E-commerce</span>
+
+            <div class="cases-list">
+                <article class="case-item" data-reveal>
+                    <div class="case-visual">
+                        <div class="case-chart">
+                            <canvas id="case1Chart"></canvas>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="chart1"></canvas>
-                        </div>
+                        <div class="case-badge">E-commerce</div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Otimização de E-commerce</h3>
-                        <p>Implementação de tracking avançado e otimização de funil de conversão para loja online de moda.</p>
-                        <div class="portfolio-metrics">
-                            <div class="metric">
+                    <div class="case-content">
+                        <h3 class="case-title">Otimização de Conversão</h3>
+                        <p class="case-description">
+                            Reestruturação completa do tracking e implementação de testes A/B estratégicos
+                            que triplicaram a taxa de conversão de uma loja de moda.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric-box">
                                 <span class="metric-value">+187%</span>
                                 <span class="metric-label">Conversão</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">-42%</span>
                                 <span class="metric-label">CAC</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">$450K</span>
-                                <span class="metric-label">Receita Adicional</span>
+                                <span class="metric-label">ROI adicional</span>
                             </div>
                         </div>
-                        <div class="portfolio-tags">
+                        <div class="case-stack">
                             <span>Google Analytics</span>
                             <span>Power BI</span>
-                            <span>Google Ads</span>
+                            <span>Optimizely</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">SaaS</span>
+                </article>
+
+                <article class="case-item" data-reveal>
+                    <div class="case-visual">
+                        <div class="case-chart">
+                            <canvas id="case2Chart"></canvas>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="chart2"></canvas>
-                        </div>
+                        <div class="case-badge">SaaS</div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Dashboard de Retenção SaaS</h3>
-                        <p>Criação de dashboard completo de métricas para startup SaaS com foco em redução de churn.</p>
-                        <div class="portfolio-metrics">
-                            <div class="metric">
+                    <div class="case-content">
+                        <h3 class="case-title">Redução de Churn</h3>
+                        <p class="case-description">
+                            Dashboard preditivo que identifica usuários em risco de cancelamento,
+                            permitindo ações proativas que dobraram a retenção.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric-box">
                                 <span class="metric-value">-65%</span>
                                 <span class="metric-label">Churn Rate</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">+120%</span>
                                 <span class="metric-label">LTV</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">98%</span>
                                 <span class="metric-label">Satisfação</span>
                             </div>
                         </div>
-                        <div class="portfolio-tags">
-                            <span>Looker Studio</span>
-                            <span>BigQuery</span>
+                        <div class="case-stack">
                             <span>Mixpanel</span>
+                            <span>Python</span>
+                            <span>BigQuery</span>
                         </div>
                     </div>
-                </div>
-                <div class="portfolio-card">
-                    <div class="portfolio-image">
-                        <div class="portfolio-overlay">
-                            <span class="portfolio-category">Lead Generation</span>
+                </article>
+
+                <article class="case-item" data-reveal>
+                    <div class="case-visual">
+                        <div class="case-chart">
+                            <canvas id="case3Chart"></canvas>
                         </div>
-                        <div class="chart-container">
-                            <canvas id="chart3"></canvas>
-                        </div>
+                        <div class="case-badge">Lead Gen</div>
                     </div>
-                    <div class="portfolio-content">
-                        <h3>Campanha de Geração de Leads</h3>
-                        <p>Otimização de campanhas Google Ads e Meta Ads para empresa B2B com foco em qualidade de leads.</p>
-                        <div class="portfolio-metrics">
-                            <div class="metric">
+                    <div class="case-content">
+                        <h3 class="case-title">Escalada de Leads B2B</h3>
+                        <p class="case-description">
+                            Otimização de campanhas multi-canal com foco em qualidade sobre quantidade,
+                            gerando pipeline qualificado de 7 dígitos.
+                        </p>
+                        <div class="case-metrics">
+                            <div class="metric-box">
                                 <span class="metric-value">+340%</span>
-                                <span class="metric-label">Leads Qualificados</span>
+                                <span class="metric-label">Leads qualificados</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">-58%</span>
                                 <span class="metric-label">CPL</span>
                             </div>
-                            <div class="metric">
+                            <div class="metric-box">
                                 <span class="metric-value">$1.2M</span>
-                                <span class="metric-label">Pipeline Gerado</span>
+                                <span class="metric-label">Pipeline</span>
                             </div>
                         </div>
-                        <div class="portfolio-tags">
+                        <div class="case-stack">
                             <span>Google Ads</span>
-                            <span>Meta Ads</span>
+                            <span>LinkedIn</span>
                             <span>HubSpot</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Tools Section -->
-    <section class="tools" id="tools">
+    <!-- Stack com animação de hover -->
+    <section class="stack" id="stack">
         <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Stack Tecnológico</span>
-                <h2 class="section-title">Ferramentas & Tecnologias</h2>
-                <p class="section-description">
-                    Domínio completo das principais ferramentas de analytics e marketing digital
-                </p>
+            <div class="section-header-fluid">
+                <span class="section-number">03</span>
+                <h2 class="section-title-fluid">
+                    <span>Ferramentas que</span>
+                    <span class="highlight-fluid">domino</span>
+                </h2>
             </div>
-            <div class="tools-categories">
-                <div class="tool-category">
-                    <h3>Analytics & BI</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="tool-icon">GA4</div>
-                            <span>Google Analytics 4</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">PBI</div>
-                            <span>Power BI</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">TAB</div>
-                            <span>Tableau</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">LS</div>
-                            <span>Looker Studio</span>
-                        </div>
-                    </div>
+
+            <div class="stack-marquee">
+                <div class="marquee-content">
+                    <div class="stack-item">Google Analytics 4</div>
+                    <div class="stack-item">Power BI</div>
+                    <div class="stack-item">BigQuery</div>
+                    <div class="stack-item">Python</div>
+                    <div class="stack-item">Google Ads</div>
+                    <div class="stack-item">Meta Ads</div>
+                    <div class="stack-item">Looker Studio</div>
+                    <div class="stack-item">Tableau</div>
+                    <div class="stack-item">SQL</div>
+                    <div class="stack-item">GTM</div>
+                    <div class="stack-item">Hotjar</div>
+                    <div class="stack-item">Mixpanel</div>
                 </div>
-                <div class="tool-category">
-                    <h3>Advertising Platforms</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="tool-icon">ADS</div>
-                            <span>Google Ads</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">FB</div>
-                            <span>Meta Ads</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">LI</div>
-                            <span>LinkedIn Ads</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">TT</div>
-                            <span>TikTok Ads</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="tool-category">
-                    <h3>Data & Programming</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="tool-icon">SQL</div>
-                            <span>SQL</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">PY</div>
-                            <span>Python</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">R</div>
-                            <span>R</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">BQ</div>
-                            <span>BigQuery</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="tool-category">
-                    <h3>CRO & Behavior</h3>
-                    <div class="tools-grid">
-                        <div class="tool-item">
-                            <div class="tool-icon">HJ</div>
-                            <span>Hotjar</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">MP</div>
-                            <span>Mixpanel</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">OPT</div>
-                            <span>Optimizely</span>
-                        </div>
-                        <div class="tool-item">
-                            <div class="tool-icon">GTM</div>
-                            <span>Google Tag Manager</span>
-                        </div>
-                    </div>
+                <div class="marquee-content" aria-hidden="true">
+                    <div class="stack-item">Google Analytics 4</div>
+                    <div class="stack-item">Power BI</div>
+                    <div class="stack-item">BigQuery</div>
+                    <div class="stack-item">Python</div>
+                    <div class="stack-item">Google Ads</div>
+                    <div class="stack-item">Meta Ads</div>
+                    <div class="stack-item">Looker Studio</div>
+                    <div class="stack-item">Tableau</div>
+                    <div class="stack-item">SQL</div>
+                    <div class="stack-item">GTM</div>
+                    <div class="stack-item">Hotjar</div>
+                    <div class="stack-item">Mixpanel</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Depoimentos</span>
-                <h2 class="section-title">O que Dizem os Clientes</h2>
-                <p class="section-description">
-                    Feedback real de empresas que transformaram seus resultados com analytics
-                </p>
-            </div>
-            <div class="testimonials-slider">
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <p class="testimonial-text">
-                        "O trabalho de analytics transformou completamente nossa estratégia de marketing.
-                        Conseguimos reduzir o CAC em 40% e aumentar o ROI em 280%. Os dashboards são
-                        intuitivos e nos dão insights acionáveis diariamente."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JM</div>
-                        <div class="author-info">
-                            <h4>João Martins</h4>
-                            <p>CEO, TechStart Ltda</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-metrics">
-                        <span>+280% ROI</span>
-                        <span>-40% CAC</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <p class="testimonial-text">
-                        "Profissional extremamente competente! Implementou um sistema de tracking completo
-                        e criou dashboards que nos permitiram tomar decisões baseadas em dados. Nosso
-                        e-commerce cresceu 150% em 6 meses."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MS</div>
-                        <div class="author-info">
-                            <h4>Maria Silva</h4>
-                            <p>Diretora de Marketing, Fashion Online</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-metrics">
-                        <span>+150% Vendas</span>
-                        <span>98% Precisão</span>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-rating">
-                        ★★★★★
-                    </div>
-                    <p class="testimonial-text">
-                        "A expertise em Google Ads e análise de dados foi fundamental para escalarmos
-                        nossa operação. As otimizações constantes geraram um aumento de 340% em leads
-                        qualificados. Recomendo fortemente!"
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">RC</div>
-                        <div class="author-info">
-                            <h4>Roberto Costa</h4>
-                            <p>Founder, LeadGen Pro</p>
-                        </div>
-                    </div>
-                    <div class="testimonial-metrics">
-                        <span>+340% Leads</span>
-                        <span>-58% CPL</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
+    <!-- Contato com forma única -->
+    <section class="contact" id="contato">
         <div class="container">
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <span class="section-tag">Entre em Contato</span>
-                    <h2 class="section-title">Vamos Transformar Seus Dados em Resultados</h2>
-                    <p class="contact-description">
-                        Pronto para levar seu negócio ao próximo nível? Entre em contato e vamos
-                        conversar sobre como posso ajudar sua empresa a crescer através de analytics.
+                    <div class="section-header-fluid">
+                        <span class="section-number">04</span>
+                        <h2 class="section-title-fluid">
+                            <span>Vamos criar</span>
+                            <span class="highlight-fluid">algo incrível?</span>
+                        </h2>
+                    </div>
+                    <p class="contact-desc">
+                        Se você busca alguém que não apenas analisa dados, mas que os traduz
+                        em estratégias de crescimento real, vamos conversar.
                     </p>
                     <div class="contact-methods">
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="method-details">
-                                <h4>WhatsApp</h4>
-                                <p>+55 (11) 99999-9999</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" stroke-width="2"/>
-                                    <path d="M22 6l-10 7L2 6" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="method-details">
-                                <h4>Email</h4>
-                                <p>contato@dataanalytics.com</p>
-                            </div>
-                        </div>
-                        <div class="contact-method">
-                            <div class="method-icon">
-                                <svg viewBox="0 0 24 24" fill="none">
-                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="2"/>
-                                    <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/>
-                                </svg>
-                            </div>
-                            <div class="method-details">
-                                <h4>Localização</h4>
-                                <p>São Paulo, Brasil</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z" fill="currentColor"/>
-                                <circle cx="4" cy="4" r="2" fill="currentColor"/>
-                            </svg>
+                        <a href="mailto:henrique@analytics.pro" class="contact-link">
+                            <span class="link-icon">@</span>
+                            <span class="link-text">henrique@analytics.pro</span>
                         </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="currentColor"/>
-                            </svg>
+                        <a href="tel:+5511999999999" class="contact-link">
+                            <span class="link-icon">📱</span>
+                            <span class="link-text">+55 11 99999-9999</span>
                         </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" fill="currentColor"/>
-                            </svg>
-                        </a>
-                        <a href="#" class="social-link">
-                            <svg viewBox="0 0 24 24" fill="none">
-                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
-                                <circle cx="18" cy="6" r="1" fill="currentColor"/>
-                            </svg>
+                        <a href="#" class="contact-link">
+                            <span class="link-icon">💼</span>
+                            <span class="link-text">linkedin.com/in/henrique</span>
                         </a>
                     </div>
                 </div>
+
                 <form class="contact-form" id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Nome</label>
-                            <input type="text" id="name" name="name" placeholder="Seu nome completo" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="seu@email.com" required>
-                        </div>
+                    <div class="form-field">
+                        <input type="text" id="name" name="name" required>
+                        <label for="name">Seu nome</label>
                     </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="phone">Telefone</label>
-                            <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999">
-                        </div>
-                        <div class="form-group">
-                            <label for="company">Empresa</label>
-                            <input type="text" id="company" name="company" placeholder="Nome da empresa">
-                        </div>
+                    <div class="form-field">
+                        <input type="email" id="email" name="email" required>
+                        <label for="email">Email</label>
                     </div>
-                    <div class="form-group">
-                        <label for="service">Serviço de Interesse</label>
-                        <select id="service" name="service">
-                            <option value="">Selecione um serviço</option>
-                            <option value="analytics">Análise de Dados</option>
-                            <option value="dashboard">Dashboard Interativo</option>
-                            <option value="campaigns">Otimização de Campanhas</option>
-                            <option value="consulting">Consultoria Estratégica</option>
-                            <option value="behavior">Análise de Comportamento</option>
-                            <option value="ml">Previsão & ML</option>
-                        </select>
+                    <div class="form-field">
+                        <input type="text" id="company" name="company">
+                        <label for="company">Empresa (opcional)</label>
                     </div>
-                    <div class="form-group">
-                        <label for="message">Mensagem</label>
-                        <textarea id="message" name="message" rows="5" placeholder="Conte-me sobre seu projeto e objetivos..." required></textarea>
+                    <div class="form-field">
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="message">Conte sobre seu projeto</label>
                     </div>
-                    <button type="submit" class="btn-primary btn-large">
-                        Enviar Mensagem
-                        <svg viewBox="0 0 24 24" fill="none">
-                            <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                    <button type="submit" class="btn-submit">
+                        <span class="btn-text">Enviar mensagem</span>
+                        <span class="btn-arrow">→</span>
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer minimalista -->
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <svg class="logo-icon" viewBox="0 0 40 40" fill="none">
-                            <path d="M5 35 L20 10 L35 35 Z" stroke="currentColor" stroke-width="2" fill="none"/>
-                            <circle cx="20" cy="15" r="3" fill="currentColor"/>
-                            <circle cx="12" cy="28" r="2" fill="currentColor"/>
-                            <circle cx="28" cy="28" r="2" fill="currentColor"/>
-                        </svg>
-                        <span class="logo-text">DataAnalytics</span>
-                    </div>
-                    <p>Transformando dados em decisões estratégicas para impulsionar seu negócio.</p>
+                <div class="footer-copy">
+                    <p>&copy; 2024 Henrique. Transformando dados em decisões.</p>
                 </div>
-                <div class="footer-links">
-                    <div class="footer-column">
-                        <h4>Navegação</h4>
-                        <ul>
-                            <li><a href="#home">Home</a></li>
-                            <li><a href="#services">Serviços</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
-                            <li><a href="#contact">Contato</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Serviços</h4>
-                        <ul>
-                            <li><a href="#services">Análise de Dados</a></li>
-                            <li><a href="#services">Dashboards</a></li>
-                            <li><a href="#services">Otimização de Campanhas</a></li>
-                            <li><a href="#services">Consultoria</a></li>
-                        </ul>
-                    </div>
-                    <div class="footer-column">
-                        <h4>Contato</h4>
-                        <ul>
-                            <li>contato@dataanalytics.com</li>
-                            <li>+55 (11) 99999-9999</li>
-                            <li>São Paulo, Brasil</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 DataAnalytics. Todos os direitos reservados.</p>
-                <div class="footer-bottom-links">
-                    <a href="#">Privacidade</a>
-                    <a href="#">Termos</a>
+                <div class="footer-social">
+                    <a href="#" class="footer-link">LinkedIn</a>
+                    <a href="#" class="footer-link">Behance</a>
+                    <a href="#" class="footer-link">GitHub</a>
                 </div>
             </div>
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
